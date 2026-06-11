@@ -1,0 +1,110 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+background:#111827;
+z-index:1000;
+padding:20px 0;
+}
+
+header .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:700;
+color:#38bdf8;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+background:linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#2563eb
+);
+}
+
+.hero .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:50px;
+}
+
+.profile-photo{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+}
+
+.btn{
+padding:12px 25px;
+background:#2563eb;
+color:white;
+border-radius:30px;
+text-decoration:none;
+}
+
+.btn-outline{
+padding:12px 25px;
+border:2px solid white;
+color:white;
+border-radius:30px;
+text-decoration:none;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+color:#38bdf8;
+}
+.project-card{
+background:#1e293b;
+padding:25px;
+margin-bottom:20px;
+border-left:5px solid #38bdf8;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+section{
+padding:80px 0;
+}
