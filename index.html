@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional portfolio of Akash V, an Electronics & Communication Engineering student. Showcasing expertise in RF Design, Antenna Engineering, Embedded Systems, and Product Innovation.">
 <title>Akash V | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+<canvas id="particles-canvas"></canvas>
 
 <header>
 <div class="container">
@@ -91,152 +96,184 @@ class="profile-photo">
 </section>
 
 <section id="about">
-
-<div class="container">
-
-<h2 class="section-title">
-About Me
-</h2>
-
-<p>
-I am pursuing BE Electronics and Communication
-Engineering at Dr. N.G.P Institute of Technology
-with a CGPA of 7.91.
-</p>
-
-<p>
-My interests include RF Engineering,
-Antenna Design, Embedded Systems,
-AI Applications and Product Development.
-</p>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
+      <p>I am pursuing BE Electronics and Communication Engineering at Dr. N.G.P Institute of Technology with a CGPA of 7.91.</p>
+      <p>My interests lie at the intersection of hardware innovation and intelligent systems. I specialize in RF Engineering, Antenna Design, Embedded Systems, AI Applications, and Product Development.</p>
+    </div>
+  </div>
 </section>
 
 <section id="skills">
-
-<div class="container">
-
-<h2 class="section-title">
-Technical Skills
-</h2>
-
-<div class="project-card">
-Java • C • HFSS • SolidWorks • Fusion 360 • Embedded Systems • Analog Electronics • Digital Electronics
-</div>
-
-</div>
-<section id="skills">
-
-<div class="container">
-
-<h2 class="section-title">
-Technical Skills
-</h2>
-
-<div class="project-card">
-Java • C • HFSS • SolidWorks • Fusion 360 • Embedded Systems • Analog Electronics • Digital Electronics
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">C</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-microchip"></i> Hardware & Embedded Systems</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Embedded Systems</span>
+          <span class="skill-tag">Analog Electronics</span>
+          <span class="skill-tag">Digital Electronics</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-compass"></i> Engineering & CAD Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HFSS</span>
+          <span class="skill-tag">SolidWorks</span>
+          <span class="skill-tag">Fusion 360</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="antennas">Antenna Design</button>
+      <button class="filter-btn" data-filter="systems">Systems & AI</button>
+    </div>
 
-<div class="container">
+    <div class="projects-grid">
+      
+      <div class="project-card" data-category="antennas">
+        <div class="project-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+        <h3>CPW Fractal Antenna</h3>
+        <p>Designed and fabricated a multiband coplanar waveguide (CPW) fractal antenna using HFSS simulation tools.</p>
+        <div class="project-tags">
+          <span class="proj-tag">HFSS</span>
+          <span class="proj-tag">RF Design</span>
+          <span class="proj-tag">Fabrication</span>
+        </div>
+      </div>
 
-<h2 class="section-title">
-Projects
-</h2>
+      <div class="project-card" data-category="antennas">
+        <div class="project-icon"><i class="fa-solid fa-wave-square"></i></div>
+        <h3>Microstrip Patch Antenna</h3>
+        <p>Designed, simulated, and analyzed parameters of a microstrip patch antenna using MATLAB scripts.</p>
+        <div class="project-tags">
+          <span class="proj-tag">MATLAB</span>
+          <span class="proj-tag">Antenna Design</span>
+          <span class="proj-tag">Simulation</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>CPW Fractal Antenna</h3>
-<p>
-Designed and fabricated a multiband fractal antenna using HFSS.
-</p>
-</div>
+      <div class="project-card" data-category="systems">
+        <div class="project-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>AVISHIELD</h3>
+        <p>AI-powered runway monitoring and intrusion detection system designed to enhance airport security and safety.</p>
+        <div class="project-tags">
+          <span class="proj-tag">AI & ML</span>
+          <span class="proj-tag">Computer Vision</span>
+          <span class="proj-tag">Security</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>Microstrip Patch Antenna</h3>
-<p>
-Designed and simulated antenna using MATLAB.
-</p>
-</div>
+      <div class="project-card" data-category="systems">
+        <div class="project-icon"><i class="fa-solid fa-wind"></i></div>
+        <h3>Smoke Detector System</h3>
+        <p>Real-time smoke detection and intelligent alert system utilizing microcontrollers and environmental sensors.</p>
+        <div class="project-tags">
+          <span class="proj-tag">Embedded C</span>
+          <span class="proj-tag">IoT</span>
+          <span class="proj-tag">Sensors</span>
+        </div>
+      </div>
 
-<div class="project-card">
-<h3>AVISHIELD</h3>
-<p>
-AI-powered runway monitoring and intrusion detection system.
-</p>
-</div>
-
-<div class="project-card">
-<h3>Smoke Detector System</h3>
-<p>
-Real-time smoke detection and alert system.
-</p>
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
+
 <section id="experience">
-
-<div class="container">
-
-<h2 class="section-title">
-Internship
-</h2>
-
-<div class="project-card">
-
-<h3>Robomiracle Technologies</h3>
-
-<p>
-Completed a 15-day internship gaining hands-on exposure
-to project development and industrial workflow.
-</p>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>Robomiracle Technologies</h3>
+            <span class="timeline-duration">15 Days</span>
+          </div>
+          <h4>Technical Intern</h4>
+          <p>Gained hands-on exposure to standard project development cycles, hardware prototyping, and industrial workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <section id="certifications">
-
-<div class="container">
-
-<h2 class="section-title">
-Certifications
-</h2>
-
-<div class="project-card">
-NPTEL • Udemy • Google Cloud • Microsoft • UiPath • MongoDB
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications-list">
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> NPTEL</div>
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Udemy</div>
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Google Cloud</div>
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Microsoft</div>
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> UiPath</div>
+      <div class="cert-item"><i class="fa-solid fa-certificate"></i> MongoDB</div>
+    </div>
+  </div>
 </section>
+
 <section id="contact">
-
-<div class="container">
-
-<h2 class="section-title">
-Contact
-</h2>
-
-<div class="project-card">
-
-<p>Email: akashveeramuthu07@gmail.com</p>
-
-<p>Phone: +91 9894454355</p>
-
-<p>LinkedIn: linkedin.com/in/akashveeramuthu</p>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-card">
+      <p class="contact-subtitle">I'm always open to discussing new projects, research collaborations, or internship opportunities. Reach out using any of the channels below!</p>
+      <div class="contact-grid">
+        <a href="mailto:akashveeramuthu07@gmail.com" class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <span>akashveeramuthu07@gmail.com</span>
+          </div>
+        </a>
+        <a href="tel:+919894454355" class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-details">
+            <h3>Phone</h3>
+            <span>+91 9894454355</span>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/akashveeramuthu" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="contact-details">
+            <h3>LinkedIn</h3>
+            <span>linkedin.com/in/akashveeramuthu</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Akash V. All Rights Reserved. Designed with <i class="fa-solid fa-heart"></i> & Code.</p>
+  </div>
+</footer>
+
+<div class="theme-switcher" title="Choose Visual Accent">
+  <button class="theme-btn active" data-theme="aurora" title="Aurora Blue" style="--theme-color: #38bdf8;"></button>
+  <button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Pink" style="--theme-color: #ff007f;"></button>
+  <button class="theme-btn" data-theme="emerald" title="Emerald Green" style="--theme-color: #10b981;"></button>
+  <button class="theme-btn" data-theme="sunset" title="Sunset Orange" style="--theme-color: #ff7a00;"></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
