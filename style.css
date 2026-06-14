@@ -423,82 +423,629 @@ header .container {
   transform: translateY(-2px);
 }
 
-/* Featured Projects Section Styles */
+/* Featured Projects & Electronic Chip Styling */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px 30px;
+  margin-top: 20px;
 }
 
 .project-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: radial-gradient(rgba(var(--color-primary-rgb), 0.05) 1.2px, transparent 1.2px) 0 0 / 14px 14px, var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: 20px;
-  padding: 30px;
-  transition: var(--transition);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.3s ease, 
+              box-shadow 0.4s ease,
+              background-image 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(56, 189, 248, 0.3);
-  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.1);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(var(--color-primary-rgb), 0.2);
+  background-image: radial-gradient(rgba(var(--color-primary-rgb), 0.08) 1.2px, transparent 1.2px) 0 0 / 14px 14px, var(--bg-card);
 }
 
-.project-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  background: rgba(56, 189, 248, 0.08);
+/* Side DIP Chip Metallic Pins */
+.chip-pins-left, .chip-pins-right {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  width: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: var(--color-primary);
-  margin-bottom: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chip-pins-left {
+  left: -10px;
+}
+
+.chip-pins-right {
+  right: -10px;
+}
+
+.chip-pins-left .pin, .chip-pins-right .pin {
+  width: 10px;
+  height: 6px;
+  background: linear-gradient(to bottom, #4b5563, #9ca3af, #374151);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
 }
 
-.project-card:hover .project-icon {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: #ffffff;
-  transform: scale(1.1);
+.chip-pins-left .pin {
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(to right, #d97706, #fbbf24, #92400e);
 }
 
+.chip-pins-right .pin {
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(to left, #d97706, #fbbf24, #92400e);
+}
+
+.project-card:hover .chip-pins-left .pin,
+.project-card:hover .chip-pins-right .pin {
+  background: linear-gradient(to bottom, var(--color-primary), #ffffff, var(--color-accent));
+  box-shadow: 0 0 8px var(--color-primary);
+  filter: brightness(1.2);
+}
+
+/* Chip Info Header */
+.chip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  margin-bottom: 18px;
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 10px;
+}
+
+.chip-serial {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chip-pins {
+  color: var(--color-text-sub);
+  opacity: 0.55;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.led-indicator-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.led-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-text-sub);
+  letter-spacing: 0.5px;
+}
+
+/* LED Indicator States & Keyframes */
+.led-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #475569;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.led-indicator.active-fabricated {
+  background: #6366f1;
+  box-shadow: 0 0 8px #6366f1;
+  animation: pulse-blue 1.5s infinite alternate;
+}
+
+.led-indicator.active-completed {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-green 1.5s infinite alternate;
+}
+
+.led-indicator.active-pending {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulse-amber 1s infinite alternate;
+}
+
+.led-indicator.active-patent {
+  background: #eab308;
+  box-shadow: 0 0 10px #eab308, 0 0 15px #a855f7;
+  animation: pulse-gold 1.2s infinite alternate;
+}
+
+@keyframes pulse-blue {
+  0% { box-shadow: 0 0 4px rgba(99, 102, 241, 0.4); opacity: 0.7; }
+  100% { box-shadow: 0 0 12px rgba(99, 102, 241, 1), 0 0 20px rgba(99, 102, 241, 0.4); opacity: 1; }
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 4px rgba(16, 185, 129, 0.4); opacity: 0.7; }
+  100% { box-shadow: 0 0 12px rgba(16, 185, 129, 1), 0 0 20px rgba(16, 185, 129, 0.4); opacity: 1; }
+}
+
+@keyframes pulse-amber {
+  0% { box-shadow: 0 0 4px rgba(245, 158, 11, 0.4); opacity: 0.6; }
+  100% { box-shadow: 0 0 12px rgba(245, 158, 11, 1), 0 0 18px rgba(245, 158, 11, 0.5); opacity: 1; }
+}
+
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 4px rgba(234, 179, 8, 0.5); opacity: 0.8; }
+  100% { box-shadow: 0 0 14px rgba(234, 179, 8, 1), 0 0 22px rgba(168, 85, 247, 0.7); opacity: 1; }
+}
+
+/* Schematic Visual Substrate styling */
+.project-visual-wrapper {
+  width: 100%;
+  height: 140px;
+  background: rgba(8, 15, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.project-card:hover .project-visual-wrapper {
+  border-color: rgba(var(--color-primary-rgb), 0.35);
+  box-shadow: inset 0 0 20px rgba(var(--color-primary-rgb), 0.12);
+}
+
+.tech-schematic {
+  width: 100%;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.project-card:hover .tech-schematic {
+  transform: scale(1.03);
+}
+
+/* SVG Schematic Graphics Elements */
+.pcb-substrate {
+  fill: #060a12;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1.5px;
+  transition: var(--transition);
+}
+
+.project-card:hover .pcb-substrate {
+  fill: #090e1a;
+  stroke: rgba(var(--color-primary-rgb), 0.25);
+}
+
+.grid-line {
+  stroke: rgba(255, 255, 255, 0.025);
+  stroke-width: 0.5px;
+  fill: none;
+}
+
+.circuit-trace {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: var(--transition);
+}
+
+.circuit-trace.signal {
+  stroke: rgba(var(--color-primary-rgb), 0.45);
+}
+
+.circuit-trace.feedline {
+  stroke-width: 2.2px;
+}
+
+.project-card:hover .circuit-trace.signal {
+  stroke: var(--color-primary);
+  filter: drop-shadow(0 0 5px var(--color-primary));
+}
+
+.project-card:hover .circuit-trace.ground {
+  stroke: rgba(var(--color-accent-rgb), 0.5);
+  filter: drop-shadow(0 0 3px var(--color-accent));
+}
+
+.vias {
+  fill: #eab308;
+  transition: var(--transition);
+}
+
+.project-card:hover .vias {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 4px #fbbf24);
+}
+
+/* CPW/MSP Antenna Layout Elements */
+.fractal-patch {
+  fill: rgba(var(--color-primary-rgb), 0.08);
+  stroke: rgba(var(--color-primary-rgb), 0.45);
+  stroke-width: 1px;
+  transition: var(--transition);
+}
+
+.project-card:hover .fractal-patch {
+  fill: rgba(var(--color-primary-rgb), 0.22);
+  stroke: var(--color-primary);
+  filter: drop-shadow(0 0 4px var(--color-primary));
+}
+
+.antenna-patch {
+  fill: rgba(var(--color-primary-rgb), 0.1);
+  stroke: rgba(var(--color-primary-rgb), 0.5);
+  stroke-width: 1.5px;
+  transition: var(--transition);
+}
+
+.project-card:hover .antenna-patch {
+  fill: rgba(var(--color-primary-rgb), 0.25);
+  stroke: var(--color-primary);
+  filter: drop-shadow(0 0 6px var(--color-primary));
+}
+
+.transformer-patch {
+  fill: rgba(var(--color-accent-rgb), 0.15);
+  stroke: rgba(var(--color-accent-rgb), 0.4);
+  stroke-width: 1px;
+  transition: var(--transition);
+}
+
+.project-card:hover .transformer-patch {
+  fill: rgba(var(--color-accent-rgb), 0.35);
+  stroke: var(--color-accent);
+}
+
+.radiation-wave {
+  fill: none;
+  stroke: rgba(var(--color-accent-rgb), 0.3);
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 2;
+  animation: radiate 2.5s linear infinite;
+  transform-origin: 50% 40px;
+}
+
+.radiation-wave.secondary {
+  animation-delay: 1.25s;
+}
+
+@keyframes radiate {
+  0% { opacity: 0; transform: scale(0.8); }
+  30% { opacity: 0.8; }
+  100% { opacity: 0; transform: scale(1.15); }
+}
+
+/* AVISHIELD AI Elements */
+.runway-line {
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+.runway-centerline {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+  fill: none;
+}
+
+.sensor-shield {
+  fill: none;
+  stroke: rgba(var(--color-primary-rgb), 0.2);
+  stroke-width: 1px;
+  stroke-dasharray: 5 3;
+}
+
+.project-card:hover .sensor-shield {
+  stroke: var(--color-primary);
+  animation: spin-radar 12s linear infinite;
+  transform-origin: 50px 50px;
+}
+
+@keyframes spin-radar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.target-radar {
+  fill: rgba(var(--color-primary-rgb), 0.03);
+  stroke: rgba(var(--color-primary-rgb), 0.35);
+  stroke-width: 1px;
+  transition: var(--transition);
+}
+
+.project-card:hover .target-radar {
+  stroke: var(--color-primary);
+  fill: rgba(var(--color-primary-rgb), 0.15);
+}
+
+.target-crosshair {
+  stroke: rgba(var(--color-accent-rgb), 0.35);
+  stroke-width: 1px;
+  fill: none;
+}
+
+.shield-polygon {
+  fill: rgba(var(--color-accent-rgb), 0.05);
+  stroke: rgba(var(--color-accent-rgb), 0.35);
+  stroke-width: 1.2px;
+  transition: var(--transition);
+}
+
+.project-card:hover .shield-polygon {
+  stroke: var(--color-accent);
+  fill: rgba(var(--color-accent-rgb), 0.15);
+  filter: drop-shadow(0 0 5px var(--color-accent));
+}
+
+/* Smoke Detector Elements */
+.sensor-housing {
+  stroke: rgba(255, 255, 255, 0.15);
+  fill: #060a12;
+  stroke-width: 2px;
+  transition: var(--transition);
+}
+
+.project-card:hover .sensor-housing {
+  stroke: rgba(255, 255, 255, 0.25);
+}
+
+.sensor-mesh {
+  stroke: rgba(var(--color-primary-rgb), 0.3);
+  fill: none;
+  stroke-width: 1px;
+  stroke-dasharray: 2 2;
+  transition: var(--transition);
+}
+
+.project-card:hover .sensor-mesh {
+  stroke: var(--color-primary);
+  stroke-dasharray: none;
+}
+
+.sensor-electrodes {
+  stroke: rgba(var(--color-accent-rgb), 0.35);
+  stroke-width: 1.2px;
+  fill: none;
+}
+
+.smoke-particle {
+  fill: var(--color-text-sub);
+  opacity: 0;
+  animation: float-smoke 3s ease-in-out infinite;
+  transform-origin: 50px 45px;
+}
+
+.smoke-particle:nth-of-type(1) { animation-delay: 0s; }
+.smoke-particle:nth-of-type(2) { animation-delay: 1s; }
+.smoke-particle:nth-of-type(3) { animation-delay: 2s; }
+
+@keyframes float-smoke {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(var(--smoke-x, 4px), -10px) scale(1.1); }
+}
+
+.schematic-resistor {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1.5px;
+  transition: var(--transition);
+}
+
+.project-card:hover .schematic-resistor {
+  stroke: var(--color-primary);
+  filter: drop-shadow(0 0 4px var(--color-primary));
+}
+
+/* RELIEVO Sustain Elements */
+.capacitor-plate {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 2px;
+  fill: none;
+  transition: var(--transition);
+}
+
+.project-card:hover .capacitor-plate {
+  stroke: #ffffff;
+}
+
+.op-amp {
+  fill: rgba(var(--color-accent-rgb), 0.05);
+  stroke: rgba(var(--color-accent-rgb), 0.3);
+  stroke-width: 1.5px;
+  transition: var(--transition);
+}
+
+.project-card:hover .op-amp {
+  stroke: var(--color-accent);
+  fill: rgba(var(--color-accent-rgb), 0.15);
+  filter: drop-shadow(0 0 4px var(--color-accent));
+}
+
+.feedback-trace {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1px;
+  transition: var(--transition);
+}
+
+.project-card:hover .feedback-trace {
+  stroke: var(--color-primary);
+}
+
+.leaf-trace {
+  stroke: #10b981;
+  fill: rgba(16, 185, 129, 0.04);
+  stroke-width: 1.2px;
+  transition: var(--transition);
+  transform-origin: 77px 22px;
+}
+
+.project-card:hover .leaf-trace {
+  stroke: #34d399;
+  fill: rgba(52, 211, 153, 0.22);
+  filter: drop-shadow(0 0 5px #34d399);
+}
+
+.leaf-vein {
+  stroke: #10b981;
+  stroke-width: 0.8px;
+  fill: none;
+}
+
+/* SURFACE GUARD Elements */
+.guard-surface {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2px;
+  fill: none;
+  transition: var(--transition);
+}
+
+.project-card:hover .guard-surface {
+  stroke: var(--color-primary);
+}
+
+.surface-mesh-cell {
+  fill: rgba(var(--color-primary-rgb), 0.03);
+  stroke: rgba(var(--color-primary-rgb), 0.25);
+  stroke-width: 1px;
+  transition: var(--transition);
+}
+
+.project-card:hover .surface-mesh-cell {
+  fill: rgba(var(--color-primary-rgb), 0.12);
+  stroke: var(--color-primary);
+}
+
+.field-boundary {
+  fill: none;
+  stroke: rgba(var(--color-accent-rgb), 0.2);
+  stroke-width: 1px;
+  stroke-dasharray: 4 3;
+}
+
+.project-card:hover .field-boundary {
+  stroke: var(--color-accent);
+  stroke-dasharray: none;
+  animation: pulse-field 1.5s infinite alternate;
+}
+
+@keyframes pulse-field {
+  0% { opacity: 0.4; filter: none; }
+  100% { opacity: 1; filter: drop-shadow(0 0 4px var(--color-accent)); }
+}
+
+.emitter-node {
+  fill: #ef4444;
+  transition: var(--transition);
+}
+
+.project-card:hover .emitter-node {
+  fill: #f87171;
+  filter: drop-shadow(0 0 4px #ef4444);
+}
+
+.emitter-beam {
+  stroke: rgba(239, 68, 68, 0.15);
+  stroke-width: 1.5px;
+  stroke-dasharray: 3 3;
+  fill: none;
+  transition: var(--transition);
+}
+
+.project-card:hover .emitter-beam {
+  stroke: rgba(239, 68, 68, 0.75);
+  stroke-width: 2px;
+  stroke-dasharray: none;
+}
+
+/* Card Typography & Text Content */
 .project-card h3 {
   font-family: var(--font-heading);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
   color: var(--color-text-main);
+  line-height: 1.3;
 }
 
 .project-card p {
   color: var(--color-text-sub);
   font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.65;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
+/* Resistor-band Project Tags */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .proj-tag {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 23, 42, 0.7);
   border: 1px solid var(--color-border);
   color: var(--color-text-sub);
-  padding: 4px 12px;
+  padding: 4px 12px 4px 22px;
   font-size: 0.8rem;
-  font-weight: 500;
-  border-radius: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.proj-tag::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 65%;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, #ef4444, #eab308, #10b981); /* Multi-color resistor code stripes */
+  transition: var(--transition);
+}
+
+.project-card:hover .proj-tag {
+  border-color: rgba(var(--color-primary-rgb), 0.25);
+  color: var(--color-text-main);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.project-card:hover .proj-tag::before {
+  filter: brightness(1.2) contrast(1.1);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
 /* Timeline Experience Styles */

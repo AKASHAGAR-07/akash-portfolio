@@ -144,12 +144,47 @@ class="profile-photo">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="antennas">Antenna Design</button>
       <button class="filter-btn" data-filter="systems">Systems & AI</button>
+      <button class="filter-btn" data-filter="patents">Patents & Innovation</button>
     </div>
 
     <div class="projects-grid">
       
+      <!-- Project 1: CPW Fractal Antenna -->
       <div class="project-card" data-category="antennas">
-        <div class="project-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">IC-CPW-FR-2.4G</span>
+          <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-fabricated" title="Status: Fabricated"></span>
+            <span class="led-label">FABRICATED</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <path d="M10,80 L40,80 L40,40 L60,40 L60,80 L90,80" class="circuit-trace ground" />
+            <path d="M50,95 L50,60" class="circuit-trace signal feedline" />
+            <rect x="35" y="15" width="30" height="30" class="fractal-patch lvl-0" />
+            <rect x="42" y="22" width="16" height="16" class="fractal-patch lvl-1" />
+            <circle cx="50" cy="60" r="2.5" class="vias" />
+          </svg>
+        </div>
+
         <h3>CPW Fractal Antenna</h3>
         <p>Designed and fabricated a multiband coplanar waveguide (CPW) fractal antenna using HFSS simulation tools.</p>
         <div class="project-tags">
@@ -159,8 +194,43 @@ class="profile-photo">
         </div>
       </div>
 
+      <!-- Project 2: Microstrip Patch Antenna -->
       <div class="project-card" data-category="antennas">
-        <div class="project-icon"><i class="fa-solid fa-wave-square"></i></div>
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">IC-MSP-PATCH-2.4G</span>
+          <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-completed" title="Status: Completed"></span>
+            <span class="led-label">COMPLETED</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <path d="M10,10 L90,10 M10,30 L90,30 M10,50 L90,50 M10,70 L90,70" class="grid-line" />
+            <rect x="25" y="20" width="50" height="40" class="antenna-patch" />
+            <path d="M50,60 L50,90" class="circuit-trace signal feedline" />
+            <rect x="47" y="60" width="6" height="15" class="transformer-patch" />
+            <path d="M25,15 Q50,0 75,15" class="radiation-wave" />
+            <path d="M15,25 Q50,-10 85,25" class="radiation-wave secondary" />
+          </svg>
+        </div>
+
         <h3>Microstrip Patch Antenna</h3>
         <p>Designed, simulated, and analyzed parameters of a microstrip patch antenna using MATLAB scripts.</p>
         <div class="project-tags">
@@ -170,8 +240,43 @@ class="profile-photo">
         </div>
       </div>
 
+      <!-- Project 3: AVISHIELD -->
       <div class="project-card" data-category="systems">
-        <div class="project-icon"><i class="fa-solid fa-eye"></i></div>
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">MCU-AVISHIELD-AI</span>
+          <span class="chip-pins">[VCC] [RX/TX] [AI] [GND]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-pending" title="Status: Waiting Approval"></span>
+            <span class="led-label">PENDING APPROVAL</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <path d="M30,5 L45,95 M70,5 L55,95" class="runway-line" />
+            <path d="M50,5 L50,20 M50,40 L50,60 M50,80 L50,95" class="runway-centerline" />
+            <circle cx="50" cy="50" r="25" class="sensor-shield" />
+            <circle cx="50" cy="50" r="10" class="target-radar" />
+            <path d="M35,50 L65,50 M50,35 L50,65" class="target-crosshair" />
+            <path d="M30,38 L50,25 L70,38 L70,62 L50,75 L30,62 Z" class="shield-polygon" />
+          </svg>
+        </div>
+
         <h3>AVISHIELD</h3>
         <p>AI-powered runway monitoring and intrusion detection system designed to enhance airport security and safety.</p>
         <div class="project-tags">
@@ -181,14 +286,146 @@ class="profile-photo">
         </div>
       </div>
 
+      <!-- Project 4: Smoke Detector System -->
       <div class="project-card" data-category="systems">
-        <div class="project-icon"><i class="fa-solid fa-wind"></i></div>
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">MCU-SMOKE-DET-IoT</span>
+          <span class="chip-pins">[VCC] [SENS] [I2C] [GND]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-completed" title="Status: Completed"></span>
+            <span class="led-label">COMPLETED</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <circle cx="50" cy="45" r="22" class="sensor-housing" />
+            <circle cx="50" cy="45" r="16" class="sensor-mesh" />
+            <path d="M38,45 L62,45 M50,33 L50,57" class="sensor-electrodes" />
+            <circle cx="42" cy="40" r="1" class="smoke-particle" />
+            <circle cx="58" cy="48" r="1" class="smoke-particle" />
+            <circle cx="50" cy="38" r="1.5" class="smoke-particle" />
+            <path d="M20,80 L35,80 L38,75 L42,85 L46,75 L50,85 L54,75 L58,80 L80,80" class="schematic-resistor" />
+            <circle cx="80" cy="80" r="2" class="vias" />
+            <circle cx="20" cy="80" r="2" class="vias" />
+          </svg>
+        </div>
+
         <h3>Smoke Detector System</h3>
         <p>Real-time smoke detection and intelligent alert system utilizing microcontrollers and environmental sensors.</p>
         <div class="project-tags">
           <span class="proj-tag">Embedded C</span>
           <span class="proj-tag">IoT</span>
           <span class="proj-tag">Sensors</span>
+        </div>
+      </div>
+
+      <!-- Project 5: Patent Approved – RELIEVO -->
+      <div class="project-card" data-category="patents">
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">PAT-RELIEVO-2026</span>
+          <span class="chip-pins">[VCC] [REG] [SUS] [GND]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
+            <span class="led-label">PATENT APPROVED</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <path d="M35,30 L65,30 M35,38 L65,38" class="capacitor-plate" />
+            <path d="M50,10 L50,30 M50,38 L50,55" class="circuit-trace signal" />
+            <path d="M25,50 L25,76 L65,63 Z" class="op-amp" />
+            <path d="M45,63 L45,85 L80,85 L80,63 L65,63" class="feedback-trace" />
+            <path d="M70,22 C75,12 85,12 85,22 C85,32 75,32 70,22 Z" class="leaf-trace" />
+            <path d="M70,22 L77,18" class="leaf-vein" />
+          </svg>
+        </div>
+
+        <h3>RELIEVO (Patent Approved)</h3>
+        <p>Successfully obtained patent approval for RELIEVO, an innovative solution focused on practical problem-solving and sustainable application. Contributed to concept development, technical design, and documentation.</p>
+        <div class="project-tags">
+          <span class="proj-tag">Patent</span>
+          <span class="proj-tag">Product Design</span>
+          <span class="proj-tag">Sustainability</span>
+        </div>
+      </div>
+
+      <!-- Project 6: Patent Approved – SURFACE GUARD -->
+      <div class="project-card" data-category="patents">
+        <!-- Physical IC Pins -->
+        <div class="chip-pins-left">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+        <div class="chip-pins-right">
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+          <span class="pin"></span>
+        </div>
+
+        <div class="chip-header">
+          <span class="chip-serial">PAT-SURFGRD-2026</span>
+          <span class="chip-pins">[VCC] [SENS] [SHLD] [GND]</span>
+          <div class="led-indicator-wrapper">
+            <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
+            <span class="led-label">PATENT APPROVED</span>
+          </div>
+        </div>
+
+        <div class="project-visual-wrapper">
+          <svg viewBox="0 0 100 100" class="tech-schematic">
+            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+            <path d="M10,80 L90,80" class="guard-surface" />
+            <path d="M20,80 L20,60 Q30,50 40,60 L40,80" class="surface-mesh-cell" />
+            <path d="M40,80 L40,60 Q50,50 60,60 L60,80" class="surface-mesh-cell" />
+            <path d="M60,80 L60,60 Q70,50 80,60 L80,80" class="surface-mesh-cell" />
+            <path d="M15,50 C30,30 70,30 85,50" class="field-boundary" />
+            <path d="M25,40 C40,25 60,25 75,40" class="field-boundary secondary" />
+            <circle cx="50" cy="20" r="4" class="emitter-node" />
+            <path d="M50,24 L50,55" class="emitter-beam" />
+          </svg>
+        </div>
+
+        <h3>SURFACE GUARD (Patent Approved)</h3>
+        <p>Secured patent approval for SURFACE GUARD, a solution designed to enhance protection, durability, and functional efficiency of surfaces. Actively involved in ideation, technical description, and refinement of claims.</p>
+        <div class="project-tags">
+          <span class="proj-tag">Patent</span>
+          <span class="proj-tag">Material Science</span>
+          <span class="proj-tag">Surface Protection</span>
         </div>
       </div>
 
