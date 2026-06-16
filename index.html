@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professional portfolio of Akash V, an Electronics & Communication Engineering student. Showcasing expertise in RF Design, Antenna Engineering, Embedded Systems, and Product Innovation.">
-<title>Akash V | Portfolio</title>
+<meta name="description" content="Professional SpaceX & Tesla-inspired portfolio of Akash V, an Electronics & Communication Engineering student. Specialized in RF Design, Antenna Engineering, Embedded Systems, and AI Runway Safety.">
+<title>Akash V | ECE Portfolio</title>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -19,14 +19,15 @@
 <!-- SpaceX Systems preloader -->
 <div id="preloader">
   <div class="loader-content">
-    <div class="preloader-logo">AVISHIELD CORE v1.0.4</div>
+    <div class="preloader-logo">AVISHIELD CORE OS v2.0</div>
     <div class="loader-bar-container">
       <div class="loader-bar"></div>
     </div>
     <div class="loader-status">
-      <span class="status-action">BOOTING SUBSYSTEMS...</span>
+      <span class="status-action">LOADING CORE REGISTERS...</span>
       <span class="status-percent" id="load-pct">0%</span>
     </div>
+    <div class="loader-terminal-log" id="loader-log"></div>
   </div>
 </div>
 
@@ -42,7 +43,7 @@
 <header>
 <div class="container">
   <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-    AKASH V
+    AKASH V <span class="logo-version">// ECE-OS</span>
   </div>
 
   <nav class="nav-links">
@@ -52,7 +53,8 @@
     <a href="#projects">Projects</a>
     <a href="#experience">Timeline</a>
     <a href="#achievements">Stats</a>
-    <a href="#certifications">Certifications</a>
+    <a href="#certifications">Credentials</a>
+    <a href="#leadership">Leadership</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -68,8 +70,8 @@
 <section class="hero" id="home">
 <div class="container">
   <div class="hero-content">
-    <div class="system-ready-tag">
-      <span class="blink-dot"></span> SYSTEM ONLINE // BE_ECE_2023_2027
+    <div class="system-ready-tag audio-click">
+      <span class="blink-dot"></span> TELEMETRY CONNECTION: ONLINE // BE_ECE
     </div>
     
     <h1>
@@ -86,33 +88,72 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="#projects" class="btn">
+      <a href="#projects" class="btn audio-click">
         Explore Projects <i class="fa-solid fa-angles-right"></i>
       </a>
       
-      <a href="resume.pdf" download class="btn-outline">
+      <a href="resume.pdf" download class="btn-outline audio-click">
         Download CV <i class="fa-solid fa-download"></i>
       </a>
     </div>
   </div>
 
-  <div class="hero-image-wrapper">
-    <div class="orbit-circle outer-orbit"></div>
-    <div class="orbit-circle mid-orbit"></div>
-    <div class="orbit-circle inner-orbit"></div>
-    
-    <!-- Floating technology icons -->
-    <div class="floating-tech-icons">
-      <div class="tech-icon floating-icon-1" title="HFSS"><i class="fa-solid fa-satellite-dish"></i></div>
-      <div class="tech-icon floating-icon-2" title="SolidWorks"><i class="fa-solid fa-cube"></i></div>
-      <div class="tech-icon floating-icon-3" title="MATLAB"><i class="fa-solid fa-wave-square"></i></div>
-      <div class="tech-icon floating-icon-4" title="Embedded C"><i class="fa-solid fa-microchip"></i></div>
-      <div class="tech-icon floating-icon-5" title="ARM Cortex"><i class="fa-solid fa-cpu"></i></div>
+  <!-- SpaceX-Style Real-time Telemetry Dashboard Widget -->
+  <div class="hero-dashboard-wrapper">
+    <div class="hero-image-wrapper">
+      <div class="orbit-circle outer-orbit"></div>
+      <div class="orbit-circle mid-orbit"></div>
+      <div class="orbit-circle inner-orbit"></div>
+      
+      <div class="floating-tech-icons">
+        <div class="tech-icon floating-icon-1 audio-click" title="HFSS"><i class="fa-solid fa-satellite-dish"></i></div>
+        <div class="tech-icon floating-icon-2 audio-click" title="SolidWorks"><i class="fa-solid fa-cube"></i></div>
+        <div class="tech-icon floating-icon-3 audio-click" title="MATLAB"><i class="fa-solid fa-wave-square"></i></div>
+        <div class="tech-icon floating-icon-4 audio-click" title="Embedded C"><i class="fa-solid fa-microchip"></i></div>
+        <div class="tech-icon floating-icon-5 audio-click" title="ARM Cortex"><i class="fa-solid fa-cpu"></i></div>
+      </div>
+      
+      <div class="hero-image">
+        <img src="profile.jpg" alt="Akash V" class="profile-photo">
+        <div class="photo-glow-border"></div>
+        <div class="holographic-lens-flare"></div>
+      </div>
     </div>
     
-    <div class="hero-image">
-      <img src="profile.jpg" alt="Akash V" class="profile-photo">
-      <div class="photo-glow-border"></div>
+    <!-- Real-time Telemetry Monitor Card -->
+    <div class="telemetry-dashboard-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="telemetry-header">
+        <span class="terminal-dot green"></span>
+        <span class="telemetry-title">RF / AI DIAGNOSTIC MONITORS</span>
+      </div>
+      <div class="telemetry-body">
+        <div class="telemetry-row">
+          <span class="telemetry-label">SYSTEM CORE TEMP:</span>
+          <span class="telemetry-val" id="telemetry-temp">38.2 °C</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="telemetry-label">ANTENNA GAIN (2.4T):</span>
+          <span class="telemetry-val" id="telemetry-gain">5.18 dBi</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="telemetry-label">AVISHIELD CORE LEVEL:</span>
+          <span class="telemetry-val green">SYS ACTIVE</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="telemetry-label">IFT BEAT CURRENT:</span>
+          <span class="telemetry-val" id="telemetry-current">100.2 Hz</span>
+        </div>
+        <div class="telemetry-progress-row">
+          <div class="progress-label">TX / RX LINK SPEED:</div>
+          <div class="progress-bar-glow">
+            <div class="progress-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -135,6 +176,13 @@
       <p>
         Combining rigorous electrical engineering math with computer vision and custom firmware execution, my goal is to design systems that make a substantial, tangible difference in human safety, mobility, and high-frequency communication.
       </p>
+      <div class="languages-block">
+        <h4>COMMUNICATION INTERFACES (LANGUAGES):</h4>
+        <div class="lang-tags">
+          <span class="lang-tag"><i class="fa-solid fa-earth-asia"></i> TAMIL (NATIVE)</span>
+          <span class="lang-tag"><i class="fa-solid fa-comments"></i> ENGLISH (PROFICIENT)</span>
+        </div>
+      </div>
     </div>
     
     <div class="about-details-card">
@@ -143,11 +191,20 @@
       <div class="card-corner bottom-left"></div>
       <div class="card-corner bottom-right"></div>
       <h3>Academic Roadmap</h3>
-      <div class="edu-item">
-        <span class="edu-year">2023 - 2027</span>
-        <h4>BE Electronics and Communication Engineering</h4>
-        <p class="edu-inst">Dr. N.G.P Institute of Technology</p>
-        <div class="gpa-badge">CGPA: 7.91</div>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <span class="edu-year">2023 - 2027</span>
+          <h4>BE Electronics and Communication Engineering</h4>
+          <p class="edu-inst">Dr. N.G.P Institute of Technology</p>
+          <div class="gpa-badge">CGPA: 7.91 / 10.00</div>
+        </div>
+        
+        <div class="edu-item">
+          <span class="edu-year">2021 - 2023</span>
+          <h4>SSLC / Matriculation Hr. Sec. Education</h4>
+          <p class="edu-inst">Srinivasa Vidhyalaya Matric Hr. Sec. School</p>
+          <div class="gpa-badge">Percentage: 79%</div>
+        </div>
       </div>
     </div>
   </div>
@@ -197,7 +254,7 @@
         <span class="skill-tag">Analog Electronics</span>
         <span class="skill-tag">Digital Electronics</span>
         <span class="skill-tag">Network Theory</span>
-        <span class="skill-tag">Microcontrollers (8051, ARM)</span>
+        <span class="skill-tag">Microcontrollers (8086, 8051, ARM Cortex)</span>
         <span class="skill-tag">RF & Antenna Design</span>
       </div>
     </div>
@@ -212,10 +269,10 @@
   <h2 class="section-title">Featured Innovations</h2>
   
   <div class="filter-container">
-    <button class="filter-btn active" data-filter="all">All Projects</button>
-    <button class="filter-btn" data-filter="antennas">Antennas</button>
-    <button class="filter-btn" data-filter="systems">Systems & AI</button>
-    <button class="filter-btn" data-filter="patents">Patented IP</button>
+    <button class="filter-btn active audio-click" data-filter="all">All Projects</button>
+    <button class="filter-btn audio-click" data-filter="antennas">Antennas</button>
+    <button class="filter-btn audio-click" data-filter="systems">Systems & AI</button>
+    <button class="filter-btn audio-click" data-filter="patents">Patented IP</button>
   </div>
 
   <div class="projects-grid">
@@ -240,7 +297,7 @@
         <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
         <div class="led-indicator-wrapper">
           <span class="led-indicator active-pending" title="Status: Ongoing"></span>
-          <span class="led-label">ONGOING</span>
+          <span class="led-label">DESIGN & FABRICATION</span>
         </div>
       </div>
 
@@ -249,7 +306,6 @@
           <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
           <path d="M10,80 L40,80 L40,40 L60,40 L60,80 L90,80" class="circuit-trace ground" />
           <path d="M50,95 L50,60" class="circuit-trace signal feedline" />
-          <!-- Fractal patch steps representing advanced fractal antenna geometry -->
           <rect x="35" y="15" width="30" height="30" class="fractal-patch lvl-0" />
           <rect x="42" y="22" width="16" height="16" class="fractal-patch lvl-1" />
           <rect x="47" y="27" width="6" height="6" class="fractal-patch lvl-2" />
@@ -258,7 +314,7 @@
       </div>
 
       <h3>CPW Fractal Antenna (2.4 THz)</h3>
-      <p>Advanced fractal antenna focused on miniaturization and multiband THz communication for future wireless channels.</p>
+      <p>Designing and optimizing a fractal antenna for size reduction and multiband operations. Analyzed key RF parameters using electromagnetic simulation tools while preparing for fabrication and validation stages.</p>
       <div class="project-tags">
         <span class="proj-tag">ANSYS HFSS</span>
         <span class="proj-tag">RF Design</span>
@@ -286,7 +342,7 @@
         <span class="chip-pins">[VCC] [RTSP] [ETH] [GND]</span>
         <div class="led-indicator-wrapper">
           <span class="led-indicator active-completed" title="Status: Active Research"></span>
-          <span class="led-label">RESEARCH PHASE</span>
+          <span class="led-label">AAI RESEARCH</span>
         </div>
       </div>
 
@@ -301,8 +357,8 @@
         </svg>
       </div>
 
-      <h3>AVISHIELD AI Runway Safety</h3>
-      <p>Computer vision runway monitoring system tracking airplanes and birds to generate automated acoustic deterrence alerts.</p>
+      <h3>AVISHIELD (AAI Coimbatore)</h3>
+      <p>Developed an intelligent runway safety system integrating AI-based vision, real-time monitoring, and bird intrusion detection under high-traffic and low-visibility conditions. Research endorsed by the Airport Authority of India, Coimbatore.</p>
       <div class="project-tags">
         <span class="proj-tag">Python</span>
         <span class="proj-tag">Computer Vision</span>
@@ -344,11 +400,11 @@
       </div>
 
       <h3>RELIEVO joint therapy</h3>
-      <p>Patent approved joint therapy system combining medium-frequency current (IFT) and deep electromagnetic heat (SWD).</p>
+      <p>Successfully obtained patent approval for RELIEVO, an innovative health solution combining IFT and SWD. Contributed to concept formulation, technical design, documentation, and safety cut-offs during the patent-filing process.</p>
       <div class="project-tags">
         <span class="proj-tag">Embedded C</span>
         <span class="proj-tag">Therapeutics</span>
-        <span class="proj-tag">Patent</span>
+        <span class="proj-tag">Invenire</span>
       </div>
     </div>
 
@@ -387,11 +443,11 @@
       </div>
 
       <h3>SURFACE GUARD sanitizer</h3>
-      <p>Patent approved handheld multi-sensor contamination scanner (UV + IR + reflectivity) triggering an automated cleaning spray.</p>
+      <p>Secured patent approval for SURFACE GUARD, designed to detect microscopic contaminants and activate sanitation sprays. Actively involved in ideation, technical descriptions, claims refining, and ESP32 board integration.</p>
       <div class="project-tags">
         <span class="proj-tag">ESP32</span>
         <span class="proj-tag">Sensors Fusion</span>
-        <span class="proj-tag">Patent</span>
+        <span class="proj-tag">Invenire</span>
       </div>
     </div>
 
@@ -430,7 +486,7 @@
       </div>
 
       <h3>Microstrip Patch Antenna</h3>
-      <p>Designed and simulated a patch antenna operating at 2.4 GHz in MATLAB, conducting full radiation pattern evaluations.</p>
+      <p>Designed and simulated a microstrip patch antenna using MATLAB to operate efficiently at 2.4 GHz. Analyzed radiation patterns and return losses, validating resonance stability and signal impedance matching.</p>
       <div class="project-tags">
         <span class="proj-tag">MATLAB</span>
         <span class="proj-tag">RF Simulation</span>
@@ -471,7 +527,7 @@
       </div>
 
       <h3>Smoke Detector System</h3>
-      <p>Real-time gas and fire detection loop triggering remote buzzer alerts and local status reporting systems.</p>
+      <p>Engineered an affordable, real-time smoke detection system to prevent fire damages. Integrated physical sensors with digital microcontrollers to generate sirens and automated status updates.</p>
       <div class="project-tags">
         <span class="proj-tag">Arduino Core</span>
         <span class="proj-tag">Sensors</span>
@@ -493,18 +549,19 @@
     
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">June 2025</div>
+      <div class="timeline-date">9.06.2025 – 26.06.2025</div>
       <div class="timeline-content">
         <div class="card-corner top-left"></div>
         <div class="card-corner top-right"></div>
         <div class="card-corner bottom-left"></div>
         <div class="card-corner bottom-right"></div>
-        <h3>ROBO MIRACLE TECHNOLOGIES</h3>
+        <h3>ROBOMIRACLE TECHNOLOGIES Pvt Ltd</h3>
         <h4>Technical Intern</h4>
         <ul class="timeline-bullets">
-          <li>Hands-on project engineering and board prototyping.</li>
-          <li>Gained deep exposure to industrial electronics workflows.</li>
-          <li>Collaborated in teams to resolve critical board layout limitations.</li>
+          <li>Completed a 15-day intensive technical internship program in Coimbatore.</li>
+          <li>Gained deep practical exposure to real-time industrial applications and IoT hardware boards.</li>
+          <li>Engineered hands-on embedded firmware and tested peripheral microchip communication links.</li>
+          <li>Strengthened problem-solving frameworks, collaborative team structures, and industrial workflows.</li>
         </ul>
       </div>
     </div>
@@ -520,12 +577,12 @@
     
     <div class="stat-card">
       <div class="stat-num" data-val="2">0</div>
-      <div class="stat-lbl">Patent Approved Projects</div>
+      <div class="stat-lbl">Patent Approved Innovations</div>
     </div>
 
     <div class="stat-card">
       <div class="stat-num" data-val="1">0</div>
-      <div class="stat-lbl">National Symposium Presentation</div>
+      <div class="stat-lbl">Symposium Presentation (INFERIX)</div>
     </div>
 
     <div class="stat-card">
@@ -540,7 +597,7 @@
 
     <div class="stat-card">
       <div class="stat-num" data-val="1">0</div>
-      <div class="stat-lbl">Sports & Events Coordinator</div>
+      <div class="stat-lbl">Event Coordinator (KANAM)</div>
     </div>
 
   </div>
@@ -551,16 +608,78 @@
 <section id="certifications" class="reveal">
 <div class="container">
   <h2 class="section-title">Professional Credentials</h2>
+  
+  <div class="certification-showcase-grid">
+    
+    <!-- Heavy/Core Course certificates -->
+    <div class="featured-cert-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="cert-badge-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <span class="cert-platform">NPTEL VERIFIED COURSE</span>
+      <h3>Hybrid Course on Water Quality</h3>
+      <p>An Approach to People’s Water Data (Jan – Apr 2024)</p>
+      <div class="cert-footer">
+        <span class="cert-status-tag">COMPLETED</span>
+      </div>
+    </div>
+
+    <div class="featured-cert-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="cert-badge-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <span class="cert-platform">UDEMY ACADEMY</span>
+      <h3>Analog Electronics Mastery</h3>
+      <p>Focusing on BJT, Op-Amps, Filters, and Transistor Circuits (2024)</p>
+      <div class="cert-footer">
+        <span class="cert-status-tag">COMPLETED</span>
+      </div>
+    </div>
+
+    <div class="featured-cert-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="cert-badge-icon"><i class="fa-solid fa-scroll"></i></div>
+      <span class="cert-platform">NATIONAL LEVEL SYMPOSIUM</span>
+      <h3>Paper Presentation: INFERIX'24</h3>
+      <p>Presented advanced ECE research and hardware concepts at Bannari Amman Institute of Technology (BIT).</p>
+      <div class="cert-footer">
+        <span class="cert-status-tag">PRESENTED</span>
+      </div>
+    </div>
+
+    <div class="featured-cert-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="cert-badge-icon"><i class="fa-solid fa-gears"></i></div>
+      <span class="cert-platform">NATIONAL WORKSHOP</span>
+      <h3>Real-Time Applications using LabVIEW</h3>
+      <p>Hands-on LabVIEW integration with Arduino microcontrollers at PSG College of Technology.</p>
+      <div class="cert-footer">
+        <span class="cert-status-tag">ATTENDED</span>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="subsection-title">Online Industry Accreditations</h3>
   <div class="cert-grid">
-    <div class="cert-card"><i class="fa-solid fa-graduation-cap"></i> NPTEL</div>
-    <div class="cert-card"><i class="fa-solid fa-chalkboard-user"></i> Udemy</div>
-    <div class="cert-card"><i class="fa-brands fa-google"></i> Google Cloud</div>
+    <div class="cert-card"><i class="fa-solid fa-medal"></i> Great Learning</div>
     <div class="cert-card"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+    <div class="cert-card"><i class="fa-brands fa-google"></i> Google Cloud</div>
     <div class="cert-card"><i class="fa-solid fa-laptop-code"></i> HP Life</div>
     <div class="cert-card"><i class="fa-solid fa-wave-square"></i> MathWorks</div>
+    <div class="cert-card"><i class="fa-solid fa-city"></i> Bentley Systems</div>
     <div class="cert-card"><i class="fa-solid fa-robot"></i> UiPath</div>
     <div class="cert-card"><i class="fa-solid fa-database"></i> MongoDB</div>
-    <div class="cert-card"><i class="fa-solid fa-city"></i> Bentley Systems</div>
   </div>
 </div>
 </section>
@@ -578,7 +697,7 @@
       <div class="card-corner bottom-right"></div>
       <div class="leader-icon"><i class="fa-solid fa-users"></i></div>
       <h3>Class Representative</h3>
-      <p>Liaison between academic departments and students; manages student coordination, schedules, and representation panels.</p>
+      <p>Elected Representative managing department interface. Liaises between faculty and ECE students while coordinating academic schedules and activities.</p>
     </div>
 
     <div class="leader-card">
@@ -588,7 +707,7 @@
       <div class="card-corner bottom-right"></div>
       <div class="leader-icon"><i class="fa-solid fa-heart-pulse"></i></div>
       <h3>NSS Volunteer</h3>
-      <p>Leading social welfare initiatives, community camps, environmental sanitation programs, and awareness rallies.</p>
+      <p>Active National Service Scheme (NSS) volunteer, organizing community development projects, cleanliness drives, and social awareness campaigns.</p>
     </div>
 
     <div class="leader-card">
@@ -598,7 +717,7 @@
       <div class="card-corner bottom-right"></div>
       <div class="leader-icon"><i class="fa-solid fa-calendar-check"></i></div>
       <h3>Event Co-Coordinator</h3>
-      <p>Managed organization operations, vendor setups, and technical logistics for institutional symposiums and ECE clubs.</p>
+      <p>Coordinated **KANAM** and **HENOSIS** (Intercultural College Event) at Dr. NGP Institute of Technology, handling operations, schedules, and inter-college team entries.</p>
     </div>
 
     <div class="leader-card">
@@ -608,7 +727,7 @@
       <div class="card-corner bottom-right"></div>
       <div class="leader-icon"><i class="fa-solid fa-volleyball"></i></div>
       <h3>Sports Representative</h3>
-      <p>Captained and coordinated division-level athletic delegations. Key accomplishments include Volleyball Runner-up titles.</p>
+      <p>Served as Sports Representative, promoting sports participation, organizing local athletic events, and leading team practices.</p>
     </div>
 
   </div>
@@ -623,17 +742,17 @@
     <div class="sports-card">
       <div class="sports-header">
         <i class="fa-solid fa-trophy"></i>
-        <h3>Volleyball Tournament</h3>
+        <h3>Volleyball Runners-Up</h3>
       </div>
-      <p>Secured Runner-Up honors in Zonal/Institutional level tournaments, emphasizing teamwork and strategic execution.</p>
+      <p>Won the Runners-Up trophy in the **11 Park Alumni Trophy-2024** tournament hosted at Park College, illustrating high athletic performance and teamwork.</p>
     </div>
     
     <div class="sports-card">
       <div class="sports-header">
         <i class="fa-solid fa-award"></i>
-        <h3>National Management Meet</h3>
+        <h3>National Level Management Meet</h3>
       </div>
-      <p>Achieved key placements in competitive panels highlighting organizational decision-making and logic challenges.</p>
+      <p>Secured **Fourth Place** in the National Level Management Meet **"ARTHASASTHRA 2025"** organized by SNS College of Technology.</p>
     </div>
   </div>
 </div>
@@ -682,7 +801,7 @@
       <div class="card-corner bottom-left"></div>
       <div class="card-corner bottom-right"></div>
       
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Transmission Sent. Systems operating.');">
+      <form class="contact-form" onsubmit="event.preventDefault(); window.audioEngine && window.audioEngine.beep(800, 0.1, 0.2); alert('Transmission Sent. Systems operating.');">
         <div class="form-group">
           <label for="name">Operator Name</label>
           <input type="text" id="name" placeholder="Enter name" required>

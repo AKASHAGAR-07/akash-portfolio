@@ -1,6 +1,57 @@
-/* Interactive SpaceX/Tesla-Inspired Portfolio Client-Side Logic */
+/* SpaceX/Tesla-Inspired Portfolio Client-Side JavaScript Logic */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. WEB AUDIO API SYNTHESIZED SOUND ENGINE ---
+  const AudioEngine = {
+    ctx: null,
+    init() {
+      if (!this.ctx) {
+        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    },
+    beep(frequency = 800, duration = 0.08, volume = 0.05) {
+      try {
+        this.init();
+        if (this.ctx.state === "suspended") {
+          this.ctx.resume();
+        }
+        const osc = this.ctx.createOscillator();
+        const gainNode = this.ctx.createGain();
+
+        osc.connect(gainNode);
+        gainNode.connect(this.ctx.destination);
+
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(frequency, this.ctx.currentTime);
+        
+        // Custom exponential decline for high-tech click feel
+        gainNode.gain.setValueAtTime(volume, this.ctx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.00001, this.ctx.currentTime + duration);
+
+        osc.start(this.ctx.currentTime);
+        osc.stop(this.ctx.currentTime + duration);
+      } catch (e) {
+        // Fallback silently if audio context is blocked
+      }
+    }
+  };
+  window.audioEngine = AudioEngine;
+
+  // Bind audio click triggers to buttons and links
+  const attachAudioTriggers = () => {
+    const clickables = document.querySelectorAll("a, button, .audio-click, .nav-links a, .chat-suggest-btn");
+    clickables.forEach(item => {
+      item.addEventListener("click", () => {
+        // High frequency soft mechanical click
+        AudioEngine.beep(1200, 0.05, 0.04);
+      });
+      item.addEventListener("mouseenter", () => {
+        // Ultra soft hover pulse click
+        AudioEngine.beep(600, 0.02, 0.01);
+      });
+    });
+  };
+
   // Mobile Navigation Hamburger Control
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
@@ -67,11 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 1. SYSTEM INITIALIZATION PRELOADER LOGIC ---
+  // --- 2. SYSTEM INITIALIZATION PRELOADER LOGIC ---
   const preloader = document.getElementById("preloader");
   const percentSpan = document.getElementById("load-pct");
   const loaderBar = document.querySelector(".loader-bar");
   const statusAction = document.querySelector(".status-action");
+  const loaderLog = document.getElementById("loader-log");
   
   if (preloader) {
     let progress = 0;
@@ -82,9 +134,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "CONNECTING REMOTE SERVERS...",
       "SYSTEM INJECT COMPLETED."
     ];
+
+    const logsList = [
+      "SYSTEM: Initializing ECE-OS Kernel...",
+      "CORE: Mapping GPIO registers to ESP32...",
+      "RF: HFSS mesh solver loaded successfully.",
+      "CV: YOLOv8 model layers initialized.",
+      "DETECTION: Bounding envelope configured.",
+      "ADC: Multiplexer channel reading established.",
+      "IFT: Beat wave phase lock established.",
+      "SWD: 27.12 MHz resonant coil operational.",
+      "SYSTEM: Welcome, Operator Akash V."
+    ];
     
     const loadingInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 5) + 3;
+      progress += Math.floor(Math.random() * 4) + 2;
       if (progress >= 100) {
         progress = 100;
         clearInterval(loadingInterval);
@@ -92,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         statusAction.textContent = stages[stages.length - 1];
         percentSpan.textContent = "100%";
         loaderBar.style.width = "100%";
+        if (loaderLog) loaderLog.textContent = logsList[logsList.length - 1];
         
         setTimeout(() => {
           preloader.classList.add("fade-out");
@@ -103,14 +168,19 @@ document.addEventListener("DOMContentLoaded", () => {
         percentSpan.textContent = `${progress}%`;
         loaderBar.style.width = `${progress}%`;
         
-        // Cycle stages messages based on progress
         const stageIndex = Math.floor((progress / 100) * (stages.length - 1));
         statusAction.textContent = stages[stageIndex];
+
+        // Print custom logs based on loader progress
+        const logIndex = Math.floor((progress / 100) * (logsList.length - 1));
+        if (loaderLog) {
+          loaderLog.textContent = logsList[logIndex];
+        }
       }
-    }, 45);
+    }, 35);
   }
 
-  // --- 2. HOLOGRAPHIC CURSOR FOLLOW GLOW ---
+  // --- 3. HOLOGRAPHIC CURSOR FOLLOW GLOW ---
   const cursorGlow = document.getElementById("cursor-glow");
   window.addEventListener("mousemove", (e) => {
     if (cursorGlow) {
@@ -119,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- 3. DYNAMIC TYPEWRITER TEXT ENGINE ---
+  // --- 4. DYNAMIC TYPEWRITER TEXT ENGINE ---
   const typewriterText = document.querySelector(".typewriter-text");
   if (typewriterText) {
     const roles = [
@@ -147,11 +217,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!isDeleting && charIndex === currentRole.length) {
         isDeleting = true;
-        delay = 2000; // Pause at end of text
+        delay = 2000;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        delay = 500; // Pause before starting next role
+        delay = 500;
       }
 
       setTimeout(type, delay);
@@ -160,7 +230,32 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
   }
 
-  // --- 4. SCROLL REVEAL OBSERVER ---
+  // --- 5. REAL-TIME SIMULATED TELEMETRY ---
+  const tempVal = document.getElementById("telemetry-temp");
+  const gainVal = document.getElementById("telemetry-gain");
+  const currentVal = document.getElementById("telemetry-current");
+
+  setInterval(() => {
+    if (tempVal) {
+      const currentTemp = (37.2 + Math.random() * 2.2).toFixed(1);
+      tempVal.textContent = `${currentTemp} °C`;
+    }
+    if (gainVal) {
+      const currentGain = (5.10 + Math.random() * 0.15).toFixed(2);
+      gainVal.textContent = `${currentGain} dBi`;
+    }
+    if (currentVal) {
+      const currentHz = (99.6 + Math.random() * 1.2).toFixed(1);
+      currentVal.textContent = `${currentHz} Hz`;
+    }
+    
+    // Synthesize faint system background operations beep
+    if (Math.random() < 0.1) {
+      AudioEngine.beep(2000, 0.01, 0.002);
+    }
+  }, 1800);
+
+  // --- 6. SCROLL REVEAL OBSERVER ---
   const revealElements = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -173,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // --- 5. STATS RUNWAY COUNT-UP ANIMATION ---
+  // --- 7. STATS RUNWAY COUNT-UP ANIMATION ---
   const statNumbers = document.querySelectorAll(".stat-num");
   const statsObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -201,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   statNumbers.forEach(num => statsObserver.observe(num));
 
-  // --- 6. TECHNICAL PROJECTS GRID FILTERING ---
+  // --- 8. TECHNICAL PROJECTS GRID FILTERING ---
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
 
@@ -223,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 7. DYNAMIC THEME SWITCHER SYSTEM ---
+  // --- 9. DYNAMIC THEME SWITCHER SYSTEM ---
   const themeButtons = document.querySelectorAll(".theme-btn");
   const applyTheme = (themeName) => {
     document.body.classList.remove("theme-cyberpunk", "theme-emerald", "theme-sunset");
@@ -252,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 8. AI ASSISTANT TERMINAL CHATBOT WIDGET ---
+  // --- 10. AI ASSISTANT TERMINAL CHATBOT WIDGET ---
   const chatbot = document.getElementById("chatbot");
   const chatToggle = document.getElementById("chat-toggle");
   const chatContainer = document.getElementById("chat-container");
@@ -264,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chatToggle.addEventListener("click", () => {
       chatContainer.classList.toggle("active");
       const notif = chatToggle.querySelector(".chat-notification");
-      if (notif) notif.remove(); // Remove initial alert indicator
+      if (notif) notif.remove();
     });
 
     chatClose.addEventListener("click", () => {
@@ -273,10 +368,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const responses = {
-    projects: "Akash has engineered 6 key projects, including high-frequency Terahertz Fractal Antennas, the AVISHIELD runway security AI system, and 2 patent approved designs. Click the cards in the 'Featured Innovations' section to filter them!",
-    patents: "Akash has secured patent approval for two innovations:\n1. **RELIEVO**: An adaptive joints therapy medical device merging IFT and SWD.\n2. **SURFACE GUARD**: A handheld smart optical scanner triggering automated sanitation spray mechanism.",
-    contact: "Establish communications with Akash V via:\n- **Email**: akashveeramuthu07@gmail.com\n- **Phone**: +91 9894454355\n- **LinkedIn**: linkedin.com/in/akash-veeramuthu-93ba93290",
-    mentor: "Akash V is mentored by **Dr. K. Sakthisudhan**, Professor at the **Dr. N.G.P Institute of Technology** in Coimbatore, India. Together, they publish research and file patents in ECE, RF, and AI domains."
+    projects: "Akash V has engineered 6 key ECE innovations:\n1. **CPW Fractal Antenna (2.4 THz)** (Ongoing design/optimization)\n2. **AVISHIELD AI Runway Safety** (AAI airport monitoring)\n3. **RELIEVO Joint Therapy** (Patent Approved IFT/SWD combiner)\n4. **SURFACE GUARD Sanitizer** (Patent Approved sensor fusion system)\n5. **Microstrip Patch Antenna** (Simulated in MATLAB @ 2.4 GHz)\n6. **Smoke Detector System** (Real-time alarm network)",
+    patents: "Akash has secured patent approval for two ECE projects:\n- **RELIEVO**: Synergistic joints treatment merging IFT and SWD therapies.\n- **SURFACE GUARD**: Optical UV/IR scanner with micro-solenoid sanitizer spray.\nBoth projects are filed under Indian Patent Office (IPO).",
+    contact: "Establish communications with Akash V:\n- **Email**: akashveeramuthu07@gmail.com\n- **Phone**: +91 9894454355\n- **LinkedIn**: linkedin.com/in/akash-veeramuthu-93ba93290\n- **Base**: Udumalpet / Coimbatore.",
+    mentor: "Akash V is mentored by **Dr. K. Sakthisudhan**, Professor at **Dr. N.G.P Institute of Technology** in Coimbatore, India. He collaborates in the ECE department on RF engineering and AI systems."
   };
 
   chatSuggestBtns.forEach(btn => {
@@ -284,7 +379,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const intent = btn.getAttribute("data-intent");
       const userText = btn.textContent;
       
-      // Append User message
       const userMsgDiv = document.createElement("div");
       userMsgDiv.className = "chat-message user";
       userMsgDiv.innerHTML = `<p>${userText}</p>`;
@@ -292,12 +386,10 @@ document.addEventListener("DOMContentLoaded", () => {
       
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
-      // Simulate Bot processing delay
       setTimeout(() => {
         const botMsgDiv = document.createElement("div");
         botMsgDiv.className = "chat-message bot";
         
-        // Convert newlines to breaks
         const formattedResponse = (responses[intent] || "Invalid query code. Restart session.").replace(/\n/g, "<br>");
         botMsgDiv.innerHTML = `<p>${formattedResponse}</p>`;
         
@@ -307,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 9. INTERACTIVE CANVAS PARTICLES NETWORK WITH MOUSE TRAILS ---
+  // --- 11. INTERACTIVE CANVAS PARTICLES NETWORK WITH MOUSE TRAILS ---
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -324,11 +416,10 @@ document.addEventListener("DOMContentLoaded", () => {
       mouse.x = event.x;
       mouse.y = event.y;
       
-      // Add a particle path tail on mouse movement
       if (Math.random() < 0.25) {
         particlesArray.push(new Particle(event.x, event.y, (Math.random() * 0.4 - 0.2), (Math.random() * 0.4 - 0.2), Math.random() * 2 + 1));
         if (particlesArray.length > 120) {
-          particlesArray.shift(); // keep array within bounds
+          particlesArray.shift();
         }
       }
     });
@@ -362,7 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
         if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
 
-        // Repulsive physics when near mouse coordinate
         if (mouse.x != null && mouse.y != null) {
           let diffX = mouse.x - this.x;
           let diffY = mouse.y - this.y;
@@ -447,4 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateParticles();
   }
+
+  // Trigger audio link mappings initialization
+  attachAudioTriggers();
 });
