@@ -16,499 +16,737 @@
 </head>
 
 <body>
+<!-- SpaceX Systems preloader -->
+<div id="preloader">
+  <div class="loader-content">
+    <div class="preloader-logo">AVISHIELD CORE v1.0.4</div>
+    <div class="loader-bar-container">
+      <div class="loader-bar"></div>
+    </div>
+    <div class="loader-status">
+      <span class="status-action">BOOTING SUBSYSTEMS...</span>
+      <span class="status-percent" id="load-pct">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- Holographic Cursor Glow Follower -->
+<div id="cursor-glow"></div>
+
+<!-- Lightweight Canvas Particle Background -->
 <canvas id="particles-canvas"></canvas>
+
+<!-- Futuristic Circuit grid overlay -->
+<div class="circuit-grid-overlay"></div>
 
 <header>
 <div class="container">
+  <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    AKASH V
+  </div>
 
-<div class="logo">
-AKASH V
-</div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Timeline</a>
+    <a href="#achievements">Stats</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<nav class="nav-links">
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#experience">Experience</a>
-<a href="#certifications">Certificates</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-<div class="hamburger">
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-
+  <div class="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 </div>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero" id="home">
-
 <div class="container">
-
-<div class="hero-content">
-
-<h1>
-Hi, I'm
-<span>Akash V</span>
-</h1>
-
-<h2>
-Electronics & Communication Engineering Student
-</h2>
-
-<p>
-Passionate about RF Design, Antenna Engineering,
-Embedded Systems, Artificial Intelligence
-and Product Innovation.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="btn">
-View Projects
-</a>
-
-<a href="resume.pdf"
-download
-class="btn-outline">
-Download Resume
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="profile.jpg"
-alt="Akash V"
-class="profile-photo">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-card">
-      <p>I am pursuing BE Electronics and Communication Engineering at Dr. N.G.P Institute of Technology with a CGPA of 7.91.</p>
-      <p>My interests lie at the intersection of hardware innovation and intelligent systems. I specialize in RF Engineering, Antenna Design, Embedded Systems, AI Applications, and Product Development.</p>
+  <div class="hero-content">
+    <div class="system-ready-tag">
+      <span class="blink-dot"></span> SYSTEM ONLINE // BE_ECE_2023_2027
     </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-code"></i> Programming</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">C</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-microchip"></i> Hardware & Embedded Systems</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Embedded Systems</span>
-          <span class="skill-tag">Analog Electronics</span>
-          <span class="skill-tag">Digital Electronics</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-compass"></i> Engineering & CAD Tools</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">HFSS</span>
-          <span class="skill-tag">SolidWorks</span>
-          <span class="skill-tag">Fusion 360</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
     
-    <div class="filter-container">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="antennas">Antenna Design</button>
-      <button class="filter-btn" data-filter="systems">Systems & AI</button>
-      <button class="filter-btn" data-filter="patents">Patents & Innovation</button>
-    </div>
+    <h1>
+      Hi, I'm <br>
+      <span class="glow-text">Akash V</span>
+    </h1>
 
-    <div class="projects-grid">
+    <h2 class="typewriter-container">
+      <span class="typewriter-prefix">I am an </span><span class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+    </h2>
+
+    <p>
+      Passionate Electronics and Communication Engineering student focused on RF systems, AI-powered safety solutions, embedded systems, antenna design, and innovative research.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">
+        Explore Projects <i class="fa-solid fa-angles-right"></i>
+      </a>
       
-      <!-- Project 1: CPW Fractal Antenna -->
-      <div class="project-card" data-category="antennas">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">IC-CPW-FR-2.4G</span>
-          <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-fabricated" title="Status: Fabricated"></span>
-            <span class="led-label">FABRICATED</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <path d="M10,80 L40,80 L40,40 L60,40 L60,80 L90,80" class="circuit-trace ground" />
-            <path d="M50,95 L50,60" class="circuit-trace signal feedline" />
-            <rect x="35" y="15" width="30" height="30" class="fractal-patch lvl-0" />
-            <rect x="42" y="22" width="16" height="16" class="fractal-patch lvl-1" />
-            <circle cx="50" cy="60" r="2.5" class="vias" />
-          </svg>
-        </div>
-
-        <h3>CPW Fractal Antenna</h3>
-        <p>Designed and fabricated a multiband coplanar waveguide (CPW) fractal antenna using HFSS simulation tools.</p>
-        <div class="project-tags">
-          <span class="proj-tag">HFSS</span>
-          <span class="proj-tag">RF Design</span>
-          <span class="proj-tag">Fabrication</span>
-        </div>
-      </div>
-
-      <!-- Project 2: Microstrip Patch Antenna -->
-      <div class="project-card" data-category="antennas">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">IC-MSP-PATCH-2.4G</span>
-          <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-completed" title="Status: Completed"></span>
-            <span class="led-label">COMPLETED</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <path d="M10,10 L90,10 M10,30 L90,30 M10,50 L90,50 M10,70 L90,70" class="grid-line" />
-            <rect x="25" y="20" width="50" height="40" class="antenna-patch" />
-            <path d="M50,60 L50,90" class="circuit-trace signal feedline" />
-            <rect x="47" y="60" width="6" height="15" class="transformer-patch" />
-            <path d="M25,15 Q50,0 75,15" class="radiation-wave" />
-            <path d="M15,25 Q50,-10 85,25" class="radiation-wave secondary" />
-          </svg>
-        </div>
-
-        <h3>Microstrip Patch Antenna</h3>
-        <p>Designed, simulated, and analyzed parameters of a microstrip patch antenna using MATLAB scripts.</p>
-        <div class="project-tags">
-          <span class="proj-tag">MATLAB</span>
-          <span class="proj-tag">Antenna Design</span>
-          <span class="proj-tag">Simulation</span>
-        </div>
-      </div>
-
-      <!-- Project 3: AVISHIELD -->
-      <div class="project-card" data-category="systems">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">MCU-AVISHIELD-AI</span>
-          <span class="chip-pins">[VCC] [RX/TX] [AI] [GND]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-pending" title="Status: Waiting Approval"></span>
-            <span class="led-label">PENDING APPROVAL</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <path d="M30,5 L45,95 M70,5 L55,95" class="runway-line" />
-            <path d="M50,5 L50,20 M50,40 L50,60 M50,80 L50,95" class="runway-centerline" />
-            <circle cx="50" cy="50" r="25" class="sensor-shield" />
-            <circle cx="50" cy="50" r="10" class="target-radar" />
-            <path d="M35,50 L65,50 M50,35 L50,65" class="target-crosshair" />
-            <path d="M30,38 L50,25 L70,38 L70,62 L50,75 L30,62 Z" class="shield-polygon" />
-          </svg>
-        </div>
-
-        <h3>AVISHIELD</h3>
-        <p>AI-powered runway monitoring and intrusion detection system designed to enhance airport security and safety.</p>
-        <div class="project-tags">
-          <span class="proj-tag">AI & ML</span>
-          <span class="proj-tag">Computer Vision</span>
-          <span class="proj-tag">Security</span>
-        </div>
-      </div>
-
-      <!-- Project 4: Smoke Detector System -->
-      <div class="project-card" data-category="systems">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">MCU-SMOKE-DET-IoT</span>
-          <span class="chip-pins">[VCC] [SENS] [I2C] [GND]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-completed" title="Status: Completed"></span>
-            <span class="led-label">COMPLETED</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <circle cx="50" cy="45" r="22" class="sensor-housing" />
-            <circle cx="50" cy="45" r="16" class="sensor-mesh" />
-            <path d="M38,45 L62,45 M50,33 L50,57" class="sensor-electrodes" />
-            <circle cx="42" cy="40" r="1" class="smoke-particle" />
-            <circle cx="58" cy="48" r="1" class="smoke-particle" />
-            <circle cx="50" cy="38" r="1.5" class="smoke-particle" />
-            <path d="M20,80 L35,80 L38,75 L42,85 L46,75 L50,85 L54,75 L58,80 L80,80" class="schematic-resistor" />
-            <circle cx="80" cy="80" r="2" class="vias" />
-            <circle cx="20" cy="80" r="2" class="vias" />
-          </svg>
-        </div>
-
-        <h3>Smoke Detector System</h3>
-        <p>Real-time smoke detection and intelligent alert system utilizing microcontrollers and environmental sensors.</p>
-        <div class="project-tags">
-          <span class="proj-tag">Embedded C</span>
-          <span class="proj-tag">IoT</span>
-          <span class="proj-tag">Sensors</span>
-        </div>
-      </div>
-
-      <!-- Project 5: Patent Approved – RELIEVO -->
-      <div class="project-card" data-category="patents">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">PAT-RELIEVO-2026</span>
-          <span class="chip-pins">[VCC] [REG] [SUS] [GND]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
-            <span class="led-label">PATENT APPROVED</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <path d="M35,30 L65,30 M35,38 L65,38" class="capacitor-plate" />
-            <path d="M50,10 L50,30 M50,38 L50,55" class="circuit-trace signal" />
-            <path d="M25,50 L25,76 L65,63 Z" class="op-amp" />
-            <path d="M45,63 L45,85 L80,85 L80,63 L65,63" class="feedback-trace" />
-            <path d="M70,22 C75,12 85,12 85,22 C85,32 75,32 70,22 Z" class="leaf-trace" />
-            <path d="M70,22 L77,18" class="leaf-vein" />
-          </svg>
-        </div>
-
-        <h3>RELIEVO (Patent Approved)</h3>
-        <p>Successfully obtained patent approval for RELIEVO, an innovative solution focused on practical problem-solving and sustainable application. Contributed to concept development, technical design, and documentation.</p>
-        <div class="project-tags">
-          <span class="proj-tag">Patent</span>
-          <span class="proj-tag">Product Design</span>
-          <span class="proj-tag">Sustainability</span>
-        </div>
-      </div>
-
-      <!-- Project 6: Patent Approved – SURFACE GUARD -->
-      <div class="project-card" data-category="patents">
-        <!-- Physical IC Pins -->
-        <div class="chip-pins-left">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-        <div class="chip-pins-right">
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-          <span class="pin"></span>
-        </div>
-
-        <div class="chip-header">
-          <span class="chip-serial">PAT-SURFGRD-2026</span>
-          <span class="chip-pins">[VCC] [SENS] [SHLD] [GND]</span>
-          <div class="led-indicator-wrapper">
-            <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
-            <span class="led-label">PATENT APPROVED</span>
-          </div>
-        </div>
-
-        <div class="project-visual-wrapper">
-          <svg viewBox="0 0 100 100" class="tech-schematic">
-            <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
-            <path d="M10,80 L90,80" class="guard-surface" />
-            <path d="M20,80 L20,60 Q30,50 40,60 L40,80" class="surface-mesh-cell" />
-            <path d="M40,80 L40,60 Q50,50 60,60 L60,80" class="surface-mesh-cell" />
-            <path d="M60,80 L60,60 Q70,50 80,60 L80,80" class="surface-mesh-cell" />
-            <path d="M15,50 C30,30 70,30 85,50" class="field-boundary" />
-            <path d="M25,40 C40,25 60,25 75,40" class="field-boundary secondary" />
-            <circle cx="50" cy="20" r="4" class="emitter-node" />
-            <path d="M50,24 L50,55" class="emitter-beam" />
-          </svg>
-        </div>
-
-        <h3>SURFACE GUARD (Patent Approved)</h3>
-        <p>Secured patent approval for SURFACE GUARD, a solution designed to enhance protection, durability, and functional efficiency of surfaces. Actively involved in ideation, technical description, and refinement of claims.</p>
-        <div class="project-tags">
-          <span class="proj-tag">Patent</span>
-          <span class="proj-tag">Material Science</span>
-          <span class="proj-tag">Surface Protection</span>
-        </div>
-      </div>
-
+      <a href="resume.pdf" download class="btn-outline">
+        Download CV <i class="fa-solid fa-download"></i>
+      </a>
     </div>
   </div>
+
+  <div class="hero-image-wrapper">
+    <div class="orbit-circle outer-orbit"></div>
+    <div class="orbit-circle mid-orbit"></div>
+    <div class="orbit-circle inner-orbit"></div>
+    
+    <!-- Floating technology icons -->
+    <div class="floating-tech-icons">
+      <div class="tech-icon floating-icon-1" title="HFSS"><i class="fa-solid fa-satellite-dish"></i></div>
+      <div class="tech-icon floating-icon-2" title="SolidWorks"><i class="fa-solid fa-cube"></i></div>
+      <div class="tech-icon floating-icon-3" title="MATLAB"><i class="fa-solid fa-wave-square"></i></div>
+      <div class="tech-icon floating-icon-4" title="Embedded C"><i class="fa-solid fa-microchip"></i></div>
+      <div class="tech-icon floating-icon-5" title="ARM Cortex"><i class="fa-solid fa-cpu"></i></div>
+    </div>
+    
+    <div class="hero-image">
+      <img src="profile.jpg" alt="Akash V" class="profile-photo">
+      <div class="photo-glow-border"></div>
+    </div>
+  </div>
+</div>
 </section>
 
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <h3>Robomiracle Technologies</h3>
-            <span class="timeline-duration">15 Days</span>
-          </div>
-          <h4>Technical Intern</h4>
-          <p>Gained hands-on exposure to standard project development cycles, hardware prototyping, and industrial workflows.</p>
-        </div>
+<!-- ABOUT ME SECTION -->
+<section id="about" class="reveal">
+<div class="container">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-card main-summary">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <h3>Professional Overview</h3>
+      <p>
+        Passionate Electronics and Communication Engineering student focused on RF systems, AI-powered safety solutions, embedded systems, antenna design, and innovative research. Driven by continuous learning and solving real-world engineering challenges.
+      </p>
+      <p>
+        Combining rigorous electrical engineering math with computer vision and custom firmware execution, my goal is to design systems that make a substantial, tangible difference in human safety, mobility, and high-frequency communication.
+      </p>
+    </div>
+    
+    <div class="about-details-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <h3>Academic Roadmap</h3>
+      <div class="edu-item">
+        <span class="edu-year">2023 - 2027</span>
+        <h4>BE Electronics and Communication Engineering</h4>
+        <p class="edu-inst">Dr. N.G.P Institute of Technology</p>
+        <div class="gpa-badge">CGPA: 7.91</div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
-<section id="certifications">
-  <div class="container">
-    <h2 class="section-title">Certifications</h2>
-    <div class="certifications-list">
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> NPTEL</div>
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Udemy</div>
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Google Cloud</div>
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> Microsoft</div>
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> UiPath</div>
-      <div class="cert-item"><i class="fa-solid fa-certificate"></i> MongoDB</div>
+<!-- SKILLS SECTION -->
+<section id="skills" class="reveal">
+<div class="container">
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+    
+    <div class="skill-category">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <h3><i class="fa-solid fa-code"></i> Programming</h3>
+      <div class="skill-tags">
+        <span class="skill-tag"><i class="fa-brands fa-java"></i> Java</span>
+        <span class="skill-tag">C Language</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <h3><i class="fa-solid fa-compass"></i> Engineering Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag"><i class="fa-solid fa-satellite-dish"></i> ANSYS HFSS</span>
+        <span class="skill-tag"><i class="fa-solid fa-draw-polygon"></i> SolidWorks</span>
+        <span class="skill-tag"><i class="fa-solid fa-cube"></i> Fusion 360</span>
+        <span class="skill-tag"><i class="fa-solid fa-wave-square"></i> MATLAB</span>
+        <span class="skill-tag"><i class="fa-solid fa-palette"></i> Canva</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <h3><i class="fa-solid fa-microchip"></i> Core Domains</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Analog Electronics</span>
+        <span class="skill-tag">Digital Electronics</span>
+        <span class="skill-tag">Network Theory</span>
+        <span class="skill-tag">Microcontrollers (8051, ARM)</span>
+        <span class="skill-tag">RF & Antenna Design</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="reveal">
+<div class="container">
+  <h2 class="section-title">Featured Innovations</h2>
+  
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="antennas">Antennas</button>
+    <button class="filter-btn" data-filter="systems">Systems & AI</button>
+    <button class="filter-btn" data-filter="patents">Patented IP</button>
+  </div>
+
+  <div class="projects-grid">
+    
+    <!-- Project 1: CPW Fractal Antenna -->
+    <div class="project-card" data-category="antennas">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">IC-CPW-FR-2.4T</span>
+        <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-pending" title="Status: Ongoing"></span>
+          <span class="led-label">ONGOING</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <path d="M10,80 L40,80 L40,40 L60,40 L60,80 L90,80" class="circuit-trace ground" />
+          <path d="M50,95 L50,60" class="circuit-trace signal feedline" />
+          <!-- Fractal patch steps representing advanced fractal antenna geometry -->
+          <rect x="35" y="15" width="30" height="30" class="fractal-patch lvl-0" />
+          <rect x="42" y="22" width="16" height="16" class="fractal-patch lvl-1" />
+          <rect x="47" y="27" width="6" height="6" class="fractal-patch lvl-2" />
+          <circle cx="50" cy="60" r="2.5" class="vias" />
+        </svg>
+      </div>
+
+      <h3>CPW Fractal Antenna (2.4 THz)</h3>
+      <p>Advanced fractal antenna focused on miniaturization and multiband THz communication for future wireless channels.</p>
+      <div class="project-tags">
+        <span class="proj-tag">ANSYS HFSS</span>
+        <span class="proj-tag">RF Design</span>
+        <span class="proj-tag">TeraHertz</span>
+      </div>
+    </div>
+
+    <!-- Project 2: AVISHIELD -->
+    <div class="project-card" data-category="systems">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">MCU-AVISHIELD-AI</span>
+        <span class="chip-pins">[VCC] [RTSP] [ETH] [GND]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-completed" title="Status: Active Research"></span>
+          <span class="led-label">RESEARCH PHASE</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <path d="M30,5 L45,95 M70,5 L55,95" class="runway-line" />
+          <path d="M50,5 L50,95" class="runway-centerline" />
+          <circle cx="50" cy="50" r="25" class="sensor-shield" />
+          <circle cx="50" cy="50" r="10" class="target-radar" />
+          <path d="M35,50 L65,50 M50,35 L50,65" class="target-crosshair" />
+        </svg>
+      </div>
+
+      <h3>AVISHIELD AI Runway Safety</h3>
+      <p>Computer vision runway monitoring system tracking airplanes and birds to generate automated acoustic deterrence alerts.</p>
+      <div class="project-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">Computer Vision</span>
+        <span class="proj-tag">Edge AI</span>
+      </div>
+    </div>
+
+    <!-- Project 3: RELIEVO -->
+    <div class="project-card" data-category="patents">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">PAT-RELIEVO-2026</span>
+        <span class="chip-pins">[VCC] [IFT] [SWD] [GND]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
+          <span class="led-label">PATENT APPROVED</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <path d="M15,50 L25,50 L35,20 L45,80 L55,35 L65,65 L75,50 L85,50" class="circuit-trace signal" />
+          <circle cx="20" cy="50" r="3" class="vias" />
+          <circle cx="80" cy="50" r="3" class="vias" />
+        </svg>
+      </div>
+
+      <h3>RELIEVO joint therapy</h3>
+      <p>Patent approved joint therapy system combining medium-frequency current (IFT) and deep electromagnetic heat (SWD).</p>
+      <div class="project-tags">
+        <span class="proj-tag">Embedded C</span>
+        <span class="proj-tag">Therapeutics</span>
+        <span class="proj-tag">Patent</span>
+      </div>
+    </div>
+
+    <!-- Project 4: SURFACE GUARD -->
+    <div class="project-card" data-category="patents">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">PAT-SURFGRD-2026</span>
+        <span class="chip-pins">[UV] [IR] [SOL] [GND]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-patent" title="Status: Patent Approved"></span>
+          <span class="led-label">PATENT APPROVED</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <circle cx="50" cy="40" r="15" class="sensor-housing" />
+          <path d="M30,75 L70,75 M50,55 L50,85" class="circuit-trace ground" />
+          <path d="M25,40 C35,20 65,20 75,40" class="field-boundary" />
+          <circle cx="50" cy="40" r="3" class="vias" />
+        </svg>
+      </div>
+
+      <h3>SURFACE GUARD sanitizer</h3>
+      <p>Patent approved handheld multi-sensor contamination scanner (UV + IR + reflectivity) triggering an automated cleaning spray.</p>
+      <div class="project-tags">
+        <span class="proj-tag">ESP32</span>
+        <span class="proj-tag">Sensors Fusion</span>
+        <span class="proj-tag">Patent</span>
+      </div>
+    </div>
+
+    <!-- Project 5: Microstrip Patch Antenna -->
+    <div class="project-card" data-category="antennas">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">IC-MSP-PATCH-2.4G</span>
+        <span class="chip-pins">[VCC] [GND] [RF] [SIG]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-completed" title="Status: Completed"></span>
+          <span class="led-label">COMPLETED</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <rect x="25" y="25" width="50" height="40" class="antenna-patch" />
+          <path d="M50,65 L50,95" class="circuit-trace signal feedline" />
+          <path d="M25,18 Q50,0 75,18" class="radiation-wave" />
+          <path d="M15,28 Q50,-10 85,28" class="radiation-wave secondary" />
+        </svg>
+      </div>
+
+      <h3>Microstrip Patch Antenna</h3>
+      <p>Designed and simulated a patch antenna operating at 2.4 GHz in MATLAB, conducting full radiation pattern evaluations.</p>
+      <div class="project-tags">
+        <span class="proj-tag">MATLAB</span>
+        <span class="proj-tag">RF Simulation</span>
+        <span class="proj-tag">Electromagnetics</span>
+      </div>
+    </div>
+
+    <!-- Project 6: Smoke Detector System -->
+    <div class="project-card" data-category="systems">
+      <div class="chip-pins-left">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+      <div class="chip-pins-right">
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+        <span class="pin"></span>
+      </div>
+
+      <div class="chip-header">
+        <span class="chip-serial">MCU-SMOKE-IOT</span>
+        <span class="chip-pins">[VCC] [SENS] [BUZZ] [GND]</span>
+        <div class="led-indicator-wrapper">
+          <span class="led-indicator active-completed" title="Status: Completed"></span>
+          <span class="led-label">COMPLETED</span>
+        </div>
+      </div>
+
+      <div class="project-visual-wrapper">
+        <svg viewBox="0 0 100 100" class="tech-schematic">
+          <rect x="5" y="5" width="90" height="90" rx="6" class="pcb-substrate" />
+          <circle cx="50" cy="50" r="18" class="sensor-housing" />
+          <path d="M10,80 L30,80 L35,70 L40,90 L45,70 L50,80 L90,80" class="circuit-trace signal" />
+        </svg>
+      </div>
+
+      <h3>Smoke Detector System</h3>
+      <p>Real-time gas and fire detection loop triggering remote buzzer alerts and local status reporting systems.</p>
+      <div class="project-tags">
+        <span class="proj-tag">Arduino Core</span>
+        <span class="proj-tag">Sensors</span>
+        <span class="proj-tag">Safety System</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="reveal">
+<div class="container">
+  <h2 class="section-title">Professional Timeline</h2>
+  
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">June 2025</div>
+      <div class="timeline-content">
+        <div class="card-corner top-left"></div>
+        <div class="card-corner top-right"></div>
+        <div class="card-corner bottom-left"></div>
+        <div class="card-corner bottom-right"></div>
+        <h3>ROBO MIRACLE TECHNOLOGIES</h3>
+        <h4>Technical Intern</h4>
+        <ul class="timeline-bullets">
+          <li>Hands-on project engineering and board prototyping.</li>
+          <li>Gained deep exposure to industrial electronics workflows.</li>
+          <li>Collaborated in teams to resolve critical board layout limitations.</li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-card">
-      <p class="contact-subtitle">I'm always open to discussing new projects, research collaborations, or internship opportunities. Reach out using any of the channels below!</p>
-      <div class="contact-grid">
-        <a href="mailto:akashveeramuthu07@gmail.com" class="contact-item">
-          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="contact-details">
-            <h3>Email</h3>
+<!-- STATS / ACHIEVEMENTS SECTION -->
+<section id="achievements" class="reveal">
+<div class="container">
+  <h2 class="section-title">Achievements & Numbers</h2>
+  <div class="stats-grid">
+    
+    <div class="stat-card">
+      <div class="stat-num" data-val="2">0</div>
+      <div class="stat-lbl">Patent Approved Projects</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-num" data-val="1">0</div>
+      <div class="stat-lbl">National Symposium Presentation</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-num" data-val="1">0</div>
+      <div class="stat-lbl">Active NSS Volunteer</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-num" data-val="1">0</div>
+      <div class="stat-lbl">Class Representative</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-num" data-val="1">0</div>
+      <div class="stat-lbl">Sports & Events Coordinator</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CERTIFICATIONS SECTION -->
+<section id="certifications" class="reveal">
+<div class="container">
+  <h2 class="section-title">Professional Credentials</h2>
+  <div class="cert-grid">
+    <div class="cert-card"><i class="fa-solid fa-graduation-cap"></i> NPTEL</div>
+    <div class="cert-card"><i class="fa-solid fa-chalkboard-user"></i> Udemy</div>
+    <div class="cert-card"><i class="fa-brands fa-google"></i> Google Cloud</div>
+    <div class="cert-card"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+    <div class="cert-card"><i class="fa-solid fa-laptop-code"></i> HP Life</div>
+    <div class="cert-card"><i class="fa-solid fa-wave-square"></i> MathWorks</div>
+    <div class="cert-card"><i class="fa-solid fa-robot"></i> UiPath</div>
+    <div class="cert-card"><i class="fa-solid fa-database"></i> MongoDB</div>
+    <div class="cert-card"><i class="fa-solid fa-city"></i> Bentley Systems</div>
+  </div>
+</div>
+</section>
+
+<!-- LEADERSHIP SECTION -->
+<section id="leadership" class="reveal">
+<div class="container">
+  <h2 class="section-title">Leadership & Roles</h2>
+  <div class="leadership-grid">
+    
+    <div class="leader-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="leader-icon"><i class="fa-solid fa-users"></i></div>
+      <h3>Class Representative</h3>
+      <p>Liaison between academic departments and students; manages student coordination, schedules, and representation panels.</p>
+    </div>
+
+    <div class="leader-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="leader-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <h3>NSS Volunteer</h3>
+      <p>Leading social welfare initiatives, community camps, environmental sanitation programs, and awareness rallies.</p>
+    </div>
+
+    <div class="leader-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="leader-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <h3>Event Co-Coordinator</h3>
+      <p>Managed organization operations, vendor setups, and technical logistics for institutional symposiums and ECE clubs.</p>
+    </div>
+
+    <div class="leader-card">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      <div class="leader-icon"><i class="fa-solid fa-volleyball"></i></div>
+      <h3>Sports Representative</h3>
+      <p>Captained and coordinated division-level athletic delegations. Key accomplishments include Volleyball Runner-up titles.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- SPORTS & EXTRACURRICULAR -->
+<section id="sports" class="reveal">
+<div class="container">
+  <h2 class="section-title">Sports & Extracurriculars</h2>
+  <div class="sports-grid">
+    <div class="sports-card">
+      <div class="sports-header">
+        <i class="fa-solid fa-trophy"></i>
+        <h3>Volleyball Tournament</h3>
+      </div>
+      <p>Secured Runner-Up honors in Zonal/Institutional level tournaments, emphasizing teamwork and strategic execution.</p>
+    </div>
+    
+    <div class="sports-card">
+      <div class="sports-header">
+        <i class="fa-solid fa-award"></i>
+        <h3>National Management Meet</h3>
+      </div>
+      <p>Achieved key placements in competitive panels highlighting organizational decision-making and logic challenges.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="reveal">
+<div class="container">
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="contact-grid">
+    
+    <div class="contact-info">
+      <h3>Establish Comm Channels</h3>
+      <p>I am open to talking about internships, research associations, or embedded systems design collaborations.</p>
+      
+      <div class="contact-channels">
+        <a href="mailto:akashveeramuthu07@gmail.com" class="channel-link">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
             <span>akashveeramuthu07@gmail.com</span>
           </div>
         </a>
-        <a href="tel:+919894454355" class="contact-item">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <div class="contact-details">
-            <h3>Phone</h3>
+
+        <a href="tel:+919894454355" class="channel-link">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h4>Phone</h4>
             <span>+91 9894454355</span>
           </div>
         </a>
-        <a href="https://linkedin.com/in/akashveeramuthu" target="_blank" rel="noopener noreferrer" class="contact-item">
-          <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
-          <div class="contact-details">
-            <h3>LinkedIn</h3>
-            <span>linkedin.com/in/akashveeramuthu</span>
+
+        <a href="https://linkedin.com/in/akash-veeramuthu-93ba93290" target="_blank" rel="noopener noreferrer" class="channel-link">
+          <i class="fa-brands fa-linkedin"></i>
+          <div>
+            <h4>LinkedIn</h4>
+            <span>linkedin.com/in/akash-veeramuthu-93ba93290</span>
           </div>
         </a>
       </div>
     </div>
+    
+    <div class="contact-form-container">
+      <div class="card-corner top-left"></div>
+      <div class="card-corner top-right"></div>
+      <div class="card-corner bottom-left"></div>
+      <div class="card-corner bottom-right"></div>
+      
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Transmission Sent. Systems operating.');">
+        <div class="form-group">
+          <label for="name">Operator Name</label>
+          <input type="text" id="name" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Comm Email</label>
+          <input type="email" id="email" placeholder="Enter email address" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Transmission Message</label>
+          <textarea id="message" rows="5" placeholder="Enter details..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Signal <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+    
   </div>
+</div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>&copy; 2026 Akash V. All Rights Reserved. Designed with <i class="fa-solid fa-heart"></i> & Code.</p>
-  </div>
+<div class="container">
+  <div class="footer-brand">AKASH V</div>
+  <p>&copy; 2026 Akash V. All Rights Reserved. Engineered with <i class="fa-solid fa-bolt"></i> & Code.</p>
+</div>
 </footer>
 
+<!-- DYNAMIC ACCENT COLORS SELECTOR -->
 <div class="theme-switcher" title="Choose Visual Accent">
-  <button class="theme-btn active" data-theme="aurora" title="Aurora Blue" style="--theme-color: #38bdf8;"></button>
-  <button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Pink" style="--theme-color: #ff007f;"></button>
-  <button class="theme-btn" data-theme="emerald" title="Emerald Green" style="--theme-color: #10b981;"></button>
-  <button class="theme-btn" data-theme="sunset" title="Sunset Orange" style="--theme-color: #ff7a00;"></button>
+<button class="theme-btn active" data-theme="aurora" title="Aurora Blue" style="--theme-color: #38bdf8;"></button>
+<button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Pink" style="--theme-color: #ff007f;"></button>
+<button class="theme-btn" data-theme="emerald" title="Emerald Green" style="--theme-color: #10b981;"></button>
+<button class="theme-btn" data-theme="sunset" title="Sunset Orange" style="--theme-color: #ff7a00;"></button>
+</div>
+
+<!-- FLOATING INTERACTIVE AI CHATBOT TERMINAL -->
+<div class="chatbot-widget" id="chatbot">
+<div class="chat-toggle" id="chat-toggle">
+  <i class="fa-solid fa-robot"></i>
+  <span class="chat-notification">1</span>
+</div>
+<div class="chat-container" id="chat-container">
+  <div class="chat-header">
+    <div class="chat-title-info">
+      <div class="chat-avatar"><i class="fa-solid fa-robot"></i></div>
+      <div>
+        <h4>AVISHIELD AI</h4>
+        <span class="chat-status">Online</span>
+      </div>
+    </div>
+    <button class="chat-close" id="chat-close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-message bot">
+      <p>System initialized. Welcome, operator. I am AVISHIELD-01, Akash V's digital portfolio assistant. How can I assist you today?</p>
+    </div>
+  </div>
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button class="chat-suggest-btn" data-intent="projects">Browse Projects</button>
+    <button class="chat-suggest-btn" data-intent="patents">Patent Innovations</button>
+    <button class="chat-suggest-btn" data-intent="contact">Get Contact Info</button>
+    <button class="chat-suggest-btn" data-intent="mentor">Mentor Info</button>
+  </div>
+</div>
 </div>
 
 <script src="script.js"></script>
